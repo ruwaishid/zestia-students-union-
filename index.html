@@ -466,28 +466,36 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
     var swiper = new Swiper(".myHeroSwiper", {
-        slidesPerView: auto, // Allows sides to be visible
-        centeredSlides: true,  // Forces active slide to center
-		loop: true,            // Infinite looping
-		loopedSlides: 6,	// Ensures enough duplicate slides exist for smooth centering
-		spaceBetween: 20,      // Gap between slides
+        /* CRITICAL: Must be "auto" to use CSS width */
+        slidesPerView: "auto",
+        
+        centeredSlides: true,
+        loop: true,
+        
+        /* CRITICAL: Needs enough duplicated slides for smooth looping */
+        loopedSlides: 6,
+        
+        spaceBetween: 20,
+        
         autoplay: {
-            delay: 3000,       // Time in milliseconds (3 seconds)
+            delay: 3000,
             disableOnInteraction: false,
         },
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
         },
-        // Adjust for mobile screens
+        
+        /* Breakpoints for larger screens */
         breakpoints: {
             768: {
-			    slidesPerView: "auto",
+                slidesPerView: "auto", // Keep "auto" for desktop too
                 spaceBetween: 40,
-				centeredSlides: true,
+                centeredSlides: true,
             }
         }
     });
+</script>
 </script>
 <script>
     // 1. Create a "watcher" (IntersectionObserver)
@@ -716,6 +724,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 </html>
+
 
 
 
