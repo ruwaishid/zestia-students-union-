@@ -352,9 +352,9 @@ body {
 @media (max-width: 768px) {
     .swiper-slide {
         
-        width: 100% !important; /* Forces it to fit the phone width */
+        width: 85% !important; /* Forces it to fit the phone width */
         height: 350px;
-		max-width: 100vw;
+		position: relative;
     }
 	.slide-caption h3 {
         font-size: 18px; /* Smaller heading on mobile */
@@ -1144,4 +1144,5 @@ body {
     }
     
     .footer-desc { max-width: 100%; }
+
 }
