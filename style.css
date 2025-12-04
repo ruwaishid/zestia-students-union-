@@ -1,0 +1,1147 @@
+/* General Reset */
+/* Add this at the VERY TOP of your file */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+   font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* --- MAIN WHITE HEADER SECTION --- */
+.header-main {
+    background-color: #ffffff;
+    padding: 15px 5%; /* Responsive padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Logo and Text Grouping */
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+   height: 100px;  /* <--- CHANGE THIS NUMBER. (80px is default) */
+    width: auto;    /* Keep this as 'auto' so the image doesn't get squashed */
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Typography styles */
+.college-title {
+    font-size: 42px; /* Large and bold */
+    font-weight: 900;
+    color: #000;
+    line-height: 0.9;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.college-subtitle {
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+    text-transform: uppercase;
+    margin: 5px 0 2px 0;
+    letter-spacing: 0.5px;
+}
+
+.accreditation {
+    font-size: 12px;
+    color: #555;
+    font-weight: 500;
+}
+
+
+
+/* --- TEAL INFO BAR SECTION --- */
+.info-bar {
+    /* 1. The Gradient Color (Dark Blue to Light Blue) */
+    background: linear-gradient(to right, #051937, #00b4d8);
+    color: white;
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;     /* CORRECTION: Changed 'left-side' to 'center' */
+    gap: 30px;               /* Space between phone and email */
+    padding: 5px 0;          /* Simple padding */
+    flex-wrap: nowrap;       /* Forces them to stay on one line */
+	/* This rounds the bottom-left and bottom-right corners */
+    border-radius: 0 0 30px 30px;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	/* Keeps the width constrained so the curves are visible if the screen is wide */
+    margin: 0 10px; /* Optional: adds space on sides so it looks like a hanging tag */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Removed 'cursor: pointer' unless these are clickable links */
+}
+
+.icon-small {
+    font-size: 16px;
+}
+
+
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .header-main {
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px 20px;
+		flex-direction: column;
+    }
+
+    .brand-container {
+        width: 100%;
+    }
+
+    .college-title {
+        font-size: 32px;
+    }
+
+    .nav-buttons {
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+	.info-bar{
+        /* 1. Stacks the Phone div on top of the Email div */
+        flex-direction: column; 
+        
+        /* 2. Reduces the gap so they are close together */
+        gap: 5px;               
+        
+        /* 3. Adjusts padding for the new taller shape */
+        padding: 10px 0;        
+    } 
+	.info-item {
+        /* 4. Makes text smaller so both phone numbers fit on one line */
+        font-size: 18px;        
+        
+        /* 5. Ensures they don't break into two lines */
+        white-space: normal;
+		justify-Content: Center;
+
+	}
+}
+/* ========================================= */
+/* STICKY NAVBAR STYLES */
+/* ========================================= */
+
+.sticky-navbar {
+    /* 1. The Sticky Magic */
+    position: sticky; 
+    top: 0; /* Stick exactly to the top edge */
+    z-index: 1000; /* Ensure it floats ABOVE the carousel and images */
+    
+    /* 2. Visual Style */
+    background-color: #ffffff; /* White background */
+    border-bottom: 1px solid #e0e0e0; /* Subtle line at bottom */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Very soft shadow */
+    padding: 0 20px;
+    
+    /* 3. Centering the Content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* Fixed height */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px; /* Space between words */
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333; /* Dark Grey Text */
+    font-size: 13px;
+    font-weight: 700; /* Bold */
+    text-transform: uppercase; /* ALL CAPS */
+    letter-spacing: 1px; /* Spaced out letters */
+    font-family: 'Montserrat', sans-serif; /* Use your main font */
+    transition: color 0.3s ease;
+    padding: 10px 0;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #00b4d8; /* Your Brand Light Blue */
+}
+
+/* Active Link (Optional) */
+.nav-links a.active {
+    color: #051937; /* Your Brand Dark Blue */
+    border-bottom: 2px solid #051937;
+}
+
+/* --- MOBILE ADJUSTMENT --- */
+@media (max-width: 768px) {
+    /* Hide the big navbar on mobile OR make it scrollable */
+    .sticky-navbar {
+        justify-content: center; /* Align left */
+        overflow-x: hidden; /* Allow horizontal scrolling */
+        white-space: normal; /* Keep links on one line */
+		height: auto;
+		padding: 10px 0;
+    }
+    
+    .nav-links {
+        gap: 15px;
+        padding-right: 0px;
+		flex-wrap: wrap;
+		justify-content: center;
+    }
+	.nav-links a {
+        font-size: 11px;         /* Smaller text */
+        padding: 5px 0;          /* Less vertical padding */
+    }
+    
+    /* Hide scrollbar for cleaner look */
+    .sticky-navbar::-webkit-scrollbar {
+        display: none; 
+    }
+}
+/* --- CAROUSEL SECTION STYLES --- */
+
+/* The container for the whole section gives it space */
+.carousel-section {
+    padding: 50px 0;
+    background-color: #f4f4f4; /* Match your body background */
+    overflow: hidden; /* Prevents scrollbars during animation */
+	text-align: center;
+	width: 100%;
+}
+
+/* The main Swiper container height */
+.myHeroSwiper {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 50px; /* Space for pagination dots */
+	margin-left: auto;
+	margin-Right: auto;
+}
+
+/* --- STYLING INDIVIDUAL SLIDES (The Blur Effect) --- */
+
+/* Default state for ALL slides (the side views) */
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 600px; /* Fixed width so multiple fit on screen */
+    height: 450px; /* Fixed height */
+    /* Start blurred and slightly transparent */
+    opacity: 0.4;
+    filter: blur(4px);
+    /* Scale down slightly */
+    transform: scale(0.85);
+    /* Smooth transition for the effect */
+    transition: all 0.4s ease;
+    /* Rounded corners for images */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative; /* Needed for caption positioning */
+	box-sizing: border-box;
+}
+
+/* The Image inside the slide */
+.slide-image {
+    display: block;
+    width: 100%;
+    height: 100%; /* Image takes top full hieght */
+    object-fit: cover;
+}
+
+/* --- STYLING THE ACTIVE CENTER SLIDE --- */
+
+/* Swiper adds this class automatically to the center slide */
+.swiper-slide-active {
+    /* Remove blur, make fully visible */
+    opacity: 1;
+    filter: blur(0);
+    /* Scale up to full size */
+    transform: scale(1);
+    z-index: 10; /* Ensure it's on top */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Add shadow to pop */
+}
+
+/* --- CAPTION STYLING --- */
+
+.slide-caption {
+    /* CHANGE 2: Position absolute to sit ON TOP of the image */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	right: 0;
+    width: auto;
+    padding: 30px 20px 20px 20px; /* More padding at top for the gradient */
+    
+    /* CHANGE 3: Black shading (gradient) from bottom to top */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+    
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+	align-items: center;
+	text-align: center;
+	box-sizing: border-box;
+    
+    /* IMPORTANT: Hide captions on blurred side slides */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 20; /* Ensure it's above the image */
+}
+
+/* Show caption ONLY on the active center slide */
+.swiper-slide-active .slide-caption {
+    opacity: 1;
+}
+
+/* Heading Style (white text) */
+.slide-caption h3 {
+    margin: 0 0 8px 0;
+    font-size: 35px;
+    font-weight: 700;
+    /* Using the dark blue from your gradient #051937 */
+    color: white; 
+    text-transform: uppercase;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+	width: 100%;
+	text-align: center;
+	
+}
+
+/* Explanation Text Style (white text) */
+.slide-caption p {
+    margin: 0;
+    font-size: 22px;
+    /* Using the dark blue again */
+    color: rgba(255, 255, 255, 0.9); 
+    line-height: 1.4;
+	text-align: center;
+}
+
+/* Styling the pagination dots below */
+.swiper-pagination-bullet-active {
+    background-color: #051937 !important;
+}
+
+/* --- RESPONSIVE ADJUSTMENT --- */
+@media (max-width: 768px) {
+    .swiper-slide {
+        
+        width: 100% !important; /* Forces it to fit the phone width */
+        height: 350px;
+		max-width: 100vw;
+    }
+	.slide-caption h3 {
+        font-size: 18px; /* Smaller heading on mobile */
+    }
+    
+    .slide-caption p {
+        font-size: 12px; /* Smaller text on mobile */
+    }
+}
+/* ========================================= */
+/* ABOUT US SECTION STYLES */
+/* ========================================= */
+
+.about-us-section {
+    padding: 80px 5%; /* More padding for a clean look */
+    background-color: #ffffff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    gap: 60px; /* Space between image and text */
+    max-width: 1200px; /* Prevents it from getting too wide on large screens */
+    margin: 0 auto; /* Centers the container on the page */
+}
+
+/* --- Left Column: Shaped Image --- */
+.about-image-wrapper {
+    flex: 1; /* Takes up half the space */
+    height: 450px; /* Fixed height for consistency */
+    
+    /* THE UNIQUE SHAPE CONFIGURATION */
+    /* Top-Left, Top-Right, Bottom-Right, Bottom-Left */
+    border-radius: 150px 0 150px 0;
+    
+    overflow: hidden; /* Ensures image stays inside the shape */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4); /* Soft shadow for depth */
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the shape without distorting */
+}
+
+/* --- Right Column: Content --- */
+.about-content {
+    flex: 1; /* Takes up the other half */
+}
+
+.about-heading {
+    font-size: 36px;
+    font-weight: 900;
+    color: #051937; /* Your dark blue brand color */
+    margin-bottom: 25px;
+    position: relative; /* Needed for the underline */
+}
+
+/* The orange underline effect */
+.about-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 120px;
+    height: 4px;
+   background: linear-gradient(to right, #051937, #00b4d8); /* A nice orange color */
+    border-radius: 2px;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+/* --- Orange Button Style --- */
+.btn-orange {
+    display: inline-flex;
+    padding: 0;
+	justify-Content:center;
+	align-items:center;
+	width: 60px;
+	height: 60px;
+    background: linear-gradient(to right, #051937, #00b4d8);
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 30px; /* Fully rounded button */
+    transition: all 0.3s ease;
+	font-size: 28px ;
+    box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+}
+
+.btn-orange:hover {
+   filter: brightness(1..2);
+    transform: translateY(-3px)scale(1.1); /* Subtle lift effect */
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack them on phone */
+        gap: 40px;
+    }
+
+    .about-image-wrapper {
+        width: 100%; /* Full width on phone */
+        height: 350px; /* Slightly shorter */
+        /* Adjust shape for mobile if needed */
+        border-radius: 100px 0 100px 0; 
+    }
+    
+    .about-heading {
+        font-size: 28px;
+    }
+    
+    .about-heading::after {
+        width: 80px;
+        height: 3px;
+    }
+}
+/* ========================================= */
+/* ENTRY ANIMATIONS */
+/* ========================================= */
+
+/* 1. Define the "Fade Up" Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0,60px,0); /* Start 60px lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0); /* End in natural position */
+    }
+}
+
+/* 2. Apply to Carousel (Runs immediately on Page Load) */
+.carousel-section {
+    /* Run the fadeUp animation for 1 second */
+	opacity:0;
+    animation: fadeUp 2s ease-out forwards; 
+	transform-origin:center bottom;
+}
+
+/* 3. Prepare About Image (Hidden initially, waits for Scroll) */
+.about-image-wrapper,
+.about-content { opacity: 0; 
+				transform: translate3d(0,60px,0);
+				transition: all 1.5s ease-out;
+				transition-delay:0.2s;
+				
+}
+/* 4. The "Active" Class (Added by JavaScript later) */
+.reveal-visible {
+    opacity: 1 !important;
+    transform: translate3d(0,0,0) !important;
+}
+/* ========================================= */
+/* TEAM/ROLES SECTION STYLES */
+/* ========================================= */
+
+.team-section {
+    padding: 80px 5%;
+    background-color: #f9f9f9; /* Slightly different background to separate sections */
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Centered Section Heading */
+.section-title.center-text {
+    text-align: center;
+    font-size: 32px;
+    color: #051937;
+    margin-bottom: 60px;
+}
+
+/* --- Grid Layout --- */
+.team-grid {
+    display: grid;
+    /* Creates 4 equal columns on desktop */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* Space between cards */
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+/* --- Shaped Image Container with Gradient --- */
+.team-image-wrapper {
+    width: 100%;
+    height: 320px; /* Fixed height for uniformity */
+    position: relative; /* Needed for floating label */
+    margin-bottom: 25px;
+    overflow: hidden; /* Crops image to shape */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+
+    /* THE UNIQUE SHAPE */
+    /* Top-L, Top-R, Bottom-R, Bottom-L */
+    border-radius: 40px 40px 120px 40px;
+}
+
+/* The Blue Gradient Background */
+.gradient-blue-bg {
+    background: linear-gradient(to bottom, #051937, #00b4d8);
+}
+
+.team-card:hover .team-image-wrapper {
+    transform: translateY(-10px); /* Pop up effect on hover */
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures photo fills the shape */
+    /* Optional: makes image slightly transparent to blend with gradient */
+	opacity: 0.9; 
+	transform: scale(1.7);
+	
+}
+
+/* --- The Floating Label (e.g., "Core Committee") --- */
+.floating-label {
+    position: absolute;
+    top: 40px;
+    left: -10px; /* Hangs off the edge slightly */
+    background-color: #051937; /* Dark blue */
+    color: white;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transform: rotate(-5deg); /* Slight tilt */
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+/* --- Card Content Styles --- */
+.team-card-content {
+	width: 100%;
+    text-align: left;
+    
+    /* 1. HIDE IT INITIALLY */
+    max-height: 0;           /* Takes up zero space */
+    opacity: 0;              /* Invisible */
+    overflow: hidden;        /* Hides anything that spills out */
+    
+    /* 2. PREPARE ANIMATION */
+    /* Start slightly higher up (behind the photo) */
+    transform: translateY(-20px); 
+    
+    /* Smoothly animate all these properties over 0.5 seconds */
+    transition: all 0.5s ease;
+    
+    /* Move padding here so it doesn't take up space when hidden */
+    padding: 0 10px;
+}
+/* --- THE HOVER TRIGGER --- */
+/* When you hover over the CARD, change the CONTENT */
+.team-card:hover .team-card-content {
+    /* 1. REVEAL IT */
+    max-height: 300px;       /* Allow it to grow to this size */
+    opacity: 1;              /* Fully visible */
+    
+    /* 2. SLIDE IT DOWN */
+    transform: translateY(0); /* Returns to natural position */
+    
+    /* Optional: Add padding back when visible if needed */
+    padding-top: 15px;
+}
+
+/* --- Optional: Keep the image pop effect --- */
+.team-card:hover .team-image-wrapper {
+    transform: translateY(-10px); /* Keeps your existing image pop */
+}
+
+.team-card-content h3 {
+    font-size: 20px;
+    font-weight: 900;
+    color: #051937; /* Dark Blue */
+    margin: 0 0 5px 0; /* Tiny space below it */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-card-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+.member-name {
+    font-size: 20px;
+    font-weight: 700;
+    color:#696969; /* Brand Light Blue */
+    margin: 0 0 10px 0; /* Space between name and class */
+    text-transform: capitalize; /* "Adhil Mohammed" instead of "ADHIL..." */
+	margin-bottom: 2px;
+}
+
+/* --- Class (p) - Updated for short text --- */
+.member-class {
+    font-size: 14px;
+    color: #666; /* Soft Grey */
+    font-style: italic; /* Makes it look like a detail */
+    margin-bottom: 15px;
+	margin-top: 0;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* "Find Out More" Link */
+.read-more-btn {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #00b4d8; /* Light blue brand color */
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    color: #051937; /* Dark blue on hover */
+    padding-left: 5px; /* Slight movement effect */
+}
+
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 992px) {
+    /* On tablets, switch to 2 columns */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* On phones, switch to 1 column stack */
+	.team-section { 
+	      padding:40px 20px;
+	}
+	
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 30px; /* More space between stacked cards */
+    }
+	.team-card {
+        /* This prevents the card from being HUGE on the phone */
+        max-width: 280px; 
+        margin: 0 auto; /* Centers the smaller card */
+    }
+	.member-name {
+        font-size: 15px; /* Adjust if needed */
+    }
+	
+    
+    .section-title.center-text {
+        font-size: 26px;
+		margin-bottom: 40px;
+    }
+
+    .team-image-wrapper {
+        height: auto !important;
+        /* Slightly less dramatic shape on mobile */
+		border-radius: 30px 30px 150px 30px;
+		margin-bottom: 15px;
+    }
+	.team-image {
+        height: auto !important; /* Maintains natural aspect ratio */
+        width: 100%;             /* Fits the width of the phone screen */
+        
+        /* This ensures NO cropping happens */
+        object-fit: cover; 
+        
+        /* Aligns photo to bottom (good for standing portraits) */
+        object-position: top center;
+    }
+	.team-card-content {
+        max-height: none !important;  /* Ignore the height limit */
+        opacity: 1 !important;        /* Always visible */
+        transform: none !important;   /* No sliding */
+        padding-top: 10px !important;
+    }
+	.team-card-content h3 {
+        font-size: 18px; /* Smaller Name */
+        margin-bottom: 5px;
+    }
+    
+    .team-card-content p {
+        font-size: 13px; /* Smaller Description */
+        line-height: 1.4;
+    }
+    
+    .floating-label {
+        font-size: 10px; /* Smaller blue tag */
+        padding: 5px 15px;
+        top: 20px;
+    }
+}
+.team-card {
+    opacity: 0;
+    transform: translate3d(0, 60px, 0); /* Push down 60px */
+    transition: all 0.8s ease-out;      /* Speed of the rise */
+}
+
+/* 2. Add specific delays for each card */
+/* Card 1: Fast */
+.team-card:nth-child(1) { transition-delay: 0.1s; }
+
+/* Card 2: Slight Delay */
+.team-card:nth-child(2) { transition-delay: 0.3s; }
+
+/* Card 3: More Delay */
+.team-card:nth-child(3) { transition-delay: 0.5s; }
+
+/* Card 4: Longest Delay */
+.team-card:nth-child(4) { transition-delay: 0.7s; }
+
+/*PRINCIPLE MESSAGE SECTION*/
+.message-slider-section {
+    /* Dark background */
+    background-color: #0a0e17; 
+    padding: 100px 5%;
+    color: #ffffff;
+    overflow: hidden; /* Keeps blobs from overflowing */
+	Position: relative;
+}
+
+.message-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+	Position: relative;
+	z-index: 2;
+}
+
+/* --- Left Column: Image & Blobs --- */
+.message-image-col {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ensure height for blobs */
+    min-height: 500px; 
+}
+
+/* The Person's Photo */
+.person-image {
+    /* Makes the image a clean vertical oval/rectangle */
+	Position: relative;
+    width: 350px;
+    height: 480px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 100px;
+    z-index: 5; /* Sits above the blob */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* The Gradient Blob Background */
+.blob-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Centers the blob behind the image */
+    transform: translate(-50%, -50%) scale(1.2); 
+    width: 400px;
+    height: 400px;
+    z-index: 2;
+    opacity: 0.2; /* Subtle gradient effect */
+    
+    /* Creates the organic blob shape */
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    
+    /* Slow rotation animation */
+    animation: blobMover 20s linear infinite;
+}
+#shape-blur-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+	margin-top: -150px;
+	margin-Left: -150px;
+    transform: none;
+    width: 100%;  /* Size of the animation area */
+	max-width:600px;
+    height: 600px;
+    z-index: 0;    /* Behind the photo (photo is z-index 2) */
+    pointer-events: none; /* Let clicks pass through to the image */
+    opacity: 0.5;  /* Slight transparency to blend nicely */
+}
+
+@keyframes blobMover {
+    0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; transform: translate(-50%, -50%) rotate(0deg) scale(1.2); }
+    50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; transform: translate(-50%, -50%) rotate(360deg) scale(1.2); }
+}
+
+/* Floating Stat Bubbles */
+.floating-bubble {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.3);
+    z-index: 3;
+}
+
+.bubble-1 {
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    left: 0;
+}
+
+.bubble-2 {
+    width: 80px;
+    height: 80px;
+    bottom: 80px;
+    right: 20px;
+}
+
+.bubble-number { font-size: 24px; font-weight: 900; }
+.bubble-text { font-size: 12px; }
+
+/* --- Right Column: Content --- */
+.message-content-col {
+    flex: 1.2; /* Slightly wider than image column */
+}
+
+.section-tag {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #00b4d8; /* Light blue */
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.message-heading {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.person-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #00b4d8;
+    margin-bottom: 30px;
+}
+
+.message-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #a0a0a0; /* Light grey text */
+    margin-bottom: 40px;
+}
+
+.contact-info-block {
+    margin-bottom: 40px;
+}
+.contact-label { font-weight: 700; display: block; margin-bottom: 5px; }
+.contact-detail { color: #a0a0a0; margin: 0; }
+
+/* --- Buttons --- */
+.button-group { display: flex; gap: 20px; }
+
+.btn-gradient, .btn-outline {
+    padding: 15px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Your Signature Gradient Button */
+.btn-gradient {
+    background: linear-gradient(to right, #051937, #00b4d8);
+    color: white;
+    border: none;
+}
+.btn-gradient:hover {
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Outline Button */
+.btn-outline {
+    background: transparent;
+    color: #00b4d8;
+    border: 2px solid #00b4d8;
+}
+.btn-outline:hover {
+    background: #00b4d8;
+    color: #051937;
+}
+
+/* --- Pagination Dots (Dark Theme) --- */
+.message-pagination .swiper-pagination-bullet {
+    background: #a0a0a0;
+    opacity: 0.5;
+}
+.message-pagination .swiper-pagination-bullet-active {
+    background: #00b4d8;
+    opacity: 1;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 992px) {
+    .message-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .message-image-col { min-height: 400px; margin-bottom: 40px; }
+    .person-image { width: 280px; height: 380px; }
+    .blob-bg { width: 320px; height: 320px; }
+    .message-heading { font-size: 32px; }
+    .button-group { justify-content: center; }
+}
+/* ========================================= */
+/* FOOTER STYLES */
+/* ========================================= */
+
+.site-footer {
+    background-color: #051937; /* Your Dark Blue Brand Color */
+    color: white;
+    padding-top: 70px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    
+    display: grid;
+    /* Creates 3 columns: Large, Small, Small */
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+/* --- Branding Column --- */
+.footer-logo {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #ffffff, #00b4d8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes text look metallic/gradient */
+}
+
+.footer-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #a0a0a0; /* Light Grey */
+    margin-bottom: 25px;
+    max-width: 300px;
+}
+
+/* Social Links (Simple Text for now) */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+.social-link {
+    color: #00b4d8;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+.social-link:hover { color: white; }
+
+/* --- Headings --- */
+.footer-heading {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: white;
+    position: relative;
+}
+
+/* Little blue dash under headings */
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 40px;
+    height: 3px;
+    background-color: #00b4d8;
+}
+
+/* --- Links Lists --- */
+.footer-links, .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li, .contact-list li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00b4d8;
+    padding-left: 5px; /* Slide effect on hover */
+}
+
+/* Contact Details */
+.contact-list li {
+    font-size: 14px;
+    color: #a0a0a0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+/* --- Bottom Copyright Bar --- */
+.footer-bottom {
+    background-color: #031229; /* Slightly darker shade */
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+/* --- Fix for Pagination Dots Overlapping Buttons --- */
+
+/* 1. Create empty space at the bottom of the slider */
+.messageSwiper {
+    /* Adds 50px of empty space below the buttons for the dots */
+    padding-bottom: 60px !important; 
+}
+
+/* 2. Force the dots into that empty space */
+.message-pagination {
+    /* Pins them to the very bottom edge */
+    bottom: 0 !important; 
+    
+    /* Ensures they are centered */
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Stack everything in 1 column */
+        gap: 40px;
+        text-align: left; /* Keep left alignment for readability */
+    }
+    
+    .footer-desc { max-width: 100%; }
+}
