@@ -77,6 +77,16 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin: 0 10px; 
 }
+/* FORCE PHONE LINKS TO BE WHITE */
+.info-item a {
+    color: #ffffff !important; /* Forces the text white */
+    text-decoration: none;     /* Removes the underline */
+}
+
+/* Optional: Add a underline when hovering so people know it is clickable */
+.info-item a:hover {
+    text-decoration: underline;
+}
 /* Styling the clickable phone numbers */
 .phone-link {
     color: white;           /* Keeps text white */
@@ -1147,4 +1157,5 @@ body {
     
     .footer-desc { max-width: 100%; }
 }
+
 
