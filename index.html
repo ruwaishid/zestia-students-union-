@@ -466,16 +466,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
     var swiper = new Swiper(".myHeroSwiper", {
-        /* CRITICAL: Must be "auto" to use CSS width */
+        // --- MOBILE SETTING ---
+        // 1. "auto" allows our 85% CSS width to work
         slidesPerView: "auto",
         
+        // 2. Center the active slide
         centeredSlides: true,
+        
+        // 3. THE FIX: Set gap to 0. (The CSS padding now creates the gap visually)
+        spaceBetween: 0, 
+        
         loop: true,
+        loopedSlides: 10, // High buffer for smooth scrolling
         
-        /* CRITICAL: Needs enough duplicated slides for smooth looping */
-        loopedSlides: 6,
-        
-        spaceBetween: 20,
+        // 4. Stabilize the text rendering
+        roundLengths: true,
         
         autoplay: {
             delay: 3000,
@@ -486,16 +491,15 @@
             clickable: true,
         },
         
-        /* Breakpoints for larger screens */
         breakpoints: {
             768: {
-                slidesPerView: "auto", // Keep "auto" for desktop too
+                // Desktop: Restore the original gaps
+                slidesPerView: "auto", 
                 spaceBetween: 40,
                 centeredSlides: true,
             }
         }
     });
-</script>
 </script>
 <script>
     // 1. Create a "watcher" (IntersectionObserver)
@@ -724,6 +728,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 </html>
+
 
 
 
