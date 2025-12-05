@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-   font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #f4f4f4;
 }
 
@@ -28,8 +28,8 @@ body {
 }
 
 .logo-img {
-   height: 100px;  /* <--- CHANGE THIS NUMBER. (80px is default) */
-    width: auto;    /* Keep this as 'auto' so the image doesn't get squashed */
+    height: 100px;
+    width: auto;
 }
 
 .text-content {
@@ -63,46 +63,38 @@ body {
     font-weight: 500;
 }
 
-
-
 /* --- TEAL INFO BAR SECTION --- */
 .info-bar {
-    /* 1. The Gradient Color (Dark Blue to Light Blue) */
     background: linear-gradient(to right, #051937, #00b4d8);
     color: white;
     display: flex;
-    justify-content: center; /* Centers items horizontally */
-    align-items: center;     /* CORRECTION: Changed 'left-side' to 'center' */
-    gap: 30px;               /* Space between phone and email */
-    padding: 5px 0;          /* Simple padding */
-    flex-wrap: nowrap;       /* Forces them to stay on one line */
-	/* This rounds the bottom-left and bottom-right corners */
+    justify-content: center; 
+    align-items: center;     
+    gap: 30px;               
+    padding: 5px 0;          
+    flex-wrap: nowrap;       
     border-radius: 0 0 30px 30px;
-	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-	/* Keeps the width constrained so the curves are visible if the screen is wide */
-    margin: 0 10px; /* Optional: adds space on sides so it looks like a hanging tag */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 0 10px; 
 }
 
 .info-item {
     display: flex;
     align-items: center;
     gap: 8px;
-    /* Removed 'cursor: pointer' unless these are clickable links */
 }
 
 .icon-small {
     font-size: 16px;
 }
 
-
-
-/* --- MOBILE RESPONSIVENESS --- */
+/* --- MOBILE RESPONSIVENESS (Header) --- */
 @media (max-width: 768px) {
     .header-main {
         align-items: flex-start;
         gap: 15px;
         padding: 15px 20px;
-		flex-direction: column;
+        flex-direction: column;
     }
 
     .brand-container {
@@ -118,47 +110,34 @@ body {
         top: 25px;
         right: 20px;
     }
-	.info-bar{
-        /* 1. Stacks the Phone div on top of the Email div */
+    .info-bar {
         flex-direction: column; 
-        
-        /* 2. Reduces the gap so they are close together */
         gap: 5px;               
-        
-        /* 3. Adjusts padding for the new taller shape */
         padding: 10px 0;        
     } 
-	.info-item {
-        /* 4. Makes text smaller so both phone numbers fit on one line */
+    .info-item {
         font-size: 18px;        
-        
-        /* 5. Ensures they don't break into two lines */
         white-space: normal;
-		justify-Content: Center;
-
-	}
+        justify-content: center;
+    }
 }
+
 /* ========================================= */
 /* STICKY NAVBAR STYLES */
 /* ========================================= */
 
 .sticky-navbar {
-    /* 1. The Sticky Magic */
     position: sticky; 
-    top: 0; /* Stick exactly to the top edge */
-    z-index: 1000; /* Ensure it floats ABOVE the carousel and images */
-    
-    /* 2. Visual Style */
-    background-color: #ffffff; /* White background */
-    border-bottom: 1px solid #e0e0e0; /* Subtle line at bottom */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Very soft shadow */
+    top: 0; 
+    z-index: 1000; 
+    background-color: #ffffff; 
+    border-bottom: 1px solid #e0e0e0; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
     padding: 0 20px;
-    
-    /* 3. Centering the Content */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px; /* Fixed height */
+    height: 60px; 
 }
 
 .nav-links {
@@ -166,7 +145,7 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 30px; /* Space between words */
+    gap: 30px; 
 }
 
 .nav-links li {
@@ -175,257 +154,245 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #333; /* Dark Grey Text */
+    color: #333; 
     font-size: 13px;
-    font-weight: 700; /* Bold */
-    text-transform: uppercase; /* ALL CAPS */
-    letter-spacing: 1px; /* Spaced out letters */
-    font-family: 'Montserrat', sans-serif; /* Use your main font */
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    font-family: 'Montserrat', sans-serif; 
     transition: color 0.3s ease;
     padding: 10px 0;
 }
 
 /* Hover Effect */
 .nav-links a:hover {
-    color: #00b4d8; /* Your Brand Light Blue */
+    color: #00b4d8; 
 }
 
 /* Active Link (Optional) */
 .nav-links a.active {
-    color: #051937; /* Your Brand Dark Blue */
+    color: #051937; 
     border-bottom: 2px solid #051937;
 }
 
-/* --- MOBILE ADJUSTMENT --- */
+/* --- MOBILE ADJUSTMENT (Navbar) --- */
 @media (max-width: 768px) {
-    /* Hide the big navbar on mobile OR make it scrollable */
     .sticky-navbar {
-        justify-content: center; /* Align left */
-        overflow-x: hidden; /* Allow horizontal scrolling */
-        white-space: normal; /* Keep links on one line */
-		height: auto;
-		padding: 10px 0;
+        justify-content: center; 
+        overflow-x: hidden; 
+        white-space: normal; 
+        height: auto;
+        padding: 10px 0;
     }
     
     .nav-links {
         gap: 15px;
         padding-right: 0px;
-		flex-wrap: wrap;
-		justify-content: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-	.nav-links a {
-        font-size: 11px;         /* Smaller text */
-        padding: 5px 0;          /* Less vertical padding */
+    .nav-links a {
+        font-size: 11px;         
+        padding: 5px 0;          
     }
     
-    /* Hide scrollbar for cleaner look */
     .sticky-navbar::-webkit-scrollbar {
         display: none; 
     }
 }
+
 /* --- CAROUSEL SECTION STYLES --- */
 
-/* The container for the whole section gives it space */
 .carousel-section {
     padding: 50px 0;
-    background-color: #f4f4f4; /* Match your body background */
-    overflow: hidden; /* Prevents scrollbars during animation */
-	text-align: center;
-	width: 100%;
+    background-color: #f4f4f4; 
+    overflow: hidden; 
+    text-align: center;
+    width: 100%;
 }
 
-/* The main Swiper container height */
 .myHeroSwiper {
     width: 100%;
     padding-top: 20px;
-    padding-bottom: 50px; /* Space for pagination dots */
-	margin-left: auto;
-	margin-Right: auto;
+    padding-bottom: 50px; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- STYLING INDIVIDUAL SLIDES (The Blur Effect) --- */
 
-/* Default state for ALL slides (the side views) */
-.swiper-slide {
+/* SCOPED: Only affects the top Hero Slider */
+.myHeroSwiper .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 600px; /* Fixed width so multiple fit on screen */
-    height: 450px; /* Fixed height */
-    /* Start blurred and slightly transparent */
+    width: 600px;
+    height: 450px;
+    
+    /* The Blur Effect (Default state) */
     opacity: 0.4;
     filter: blur(4px);
-    /* Scale down slightly */
     transform: scale(0.85);
-    /* Smooth transition for the effect */
     transition: all 0.4s ease;
-    /* Rounded corners for images */
+    
     border-radius: 15px;
     overflow: hidden;
-    position: relative; /* Needed for caption positioning */
-	box-sizing: border-box;
+    position: relative;
+    box-sizing: border-box;
 }
 
-/* The Image inside the slide */
+/* Image inside the slide */
 .slide-image {
     display: block;
     width: 100%;
-    height: 100%; /* Image takes top full hieght */
+    height: 100%;
     object-fit: cover;
 }
 
 /* --- STYLING THE ACTIVE CENTER SLIDE --- */
 
-/* Swiper adds this class automatically to the center slide */
-.swiper-slide-active {
-    /* Remove blur, make fully visible */
+.myHeroSwiper .swiper-slide-active {
     opacity: 1;
     filter: blur(0);
-    /* Scale up to full size */
     transform: scale(1);
-    z-index: 10; /* Ensure it's on top */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Add shadow to pop */
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 /* --- CAPTION STYLING --- */
 
 .slide-caption {
-    /* CHANGE 2: Position absolute to sit ON TOP of the image */
     position: absolute;
     bottom: 0;
     left: 0;
-	right: 0;
+    right: 0;
     width: auto;
-    padding: 30px 20px 20px 20px; /* More padding at top for the gradient */
-    
-    /* CHANGE 3: Black shading (gradient) from bottom to top */
+    padding: 30px 20px 20px 20px;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
-    
-    
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-	align-items: center;
-	text-align: center;
-	box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
     
-    /* IMPORTANT: Hide captions on blurred side slides */
+    /* Hide captions on blurred slides */
     opacity: 0;
     transition: opacity 0.4s ease;
-    z-index: 20; /* Ensure it's above the image */
+    z-index: 20;
 }
 
 /* Show caption ONLY on the active center slide */
-.swiper-slide-active .slide-caption {
+.myHeroSwiper .swiper-slide-active .slide-caption {
     opacity: 1;
 }
 
-/* Heading Style (white text) */
 .slide-caption h3 {
     margin: 0 0 8px 0;
     font-size: 35px;
     font-weight: 700;
-    /* Using the dark blue from your gradient #051937 */
     color: white; 
     text-transform: uppercase;
-	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-	width: 100%;
-	text-align: center;
-	
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    width: 100%;
+    text-align: center;
 }
 
-/* Explanation Text Style (white text) */
 .slide-caption p {
     margin: 0;
     font-size: 22px;
-    /* Using the dark blue again */
     color: rgba(255, 255, 255, 0.9); 
     line-height: 1.4;
-	text-align: center;
+    text-align: center;
 }
 
-/* Styling the pagination dots below */
+/* Pagination Dots */
 .swiper-pagination-bullet-active {
     background-color: #051937 !important;
 }
 
-/* --- RESPONSIVE ADJUSTMENT --- */
+/* --- RESPONSIVE ADJUSTMENT (HERO ONLY) --- */
 @media (max-width: 768px) {
-    /* 1. Reset the container (Remove the padding hack) */
+    /* Reset padding for the container */
     .myHeroSwiper {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
 
-    /* 2. Set the Slide Size */
-    .swiper-slide {
-        /* This sets the width to 85% of the screen */
+    /* Target ONLY the Hero Slides */
+    .myHeroSwiper .swiper-slide {
         width: 85% !important; 
         height: 350px;
-        
-        /* 3. THIS CREATES THE "GAP" (10px left + 10px right = 20px gap) */
-        /* Since this is padding, Swiper doesn't need to calculate it! */
-        padding: 0 10px; 
+        padding: 0 10px; /* Internal gap */
         box-sizing: border-box;
         
-        /* 4. Reset effects */
         opacity: 0.4; 
         transform: scale(1);
         transition: opacity 0.3s ease;
     }
 
-    /* 5. Highlight the Active Slide */
-    .swiper-slide-active {
+    .myHeroSwiper .swiper-slide-active {
         opacity: 1;
         z-index: 10;
+        /* CRITICAL FIX: Explicitly remove blur on mobile active slide */
+        filter: blur(0) !important;
+        transform: scale(1.1); /* Optional: slight pop */
+    }
+
+    .slide-caption h3 {
+        font-size: 18px; 
+    }
+    
+    .slide-caption p {
+        font-size: 12px; 
     }
 }
+
 /* ========================================= */
 /* ABOUT US SECTION STYLES */
 /* ========================================= */
 
 .about-us-section {
-    padding: 80px 5%; /* More padding for a clean look */
+    padding: 80px 5%; 
     background-color: #ffffff;
 }
 
 .about-container {
     display: flex;
-    align-items: center; /* Vertically center the content */
-    gap: 60px; /* Space between image and text */
-    max-width: 1200px; /* Prevents it from getting too wide on large screens */
-    margin: 0 auto; /* Centers the container on the page */
+    align-items: center; 
+    gap: 60px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 /* --- Left Column: Shaped Image --- */
 .about-image-wrapper {
-    flex: 1; /* Takes up half the space */
-    height: 450px; /* Fixed height for consistency */
+    flex: 1; 
+    height: 450px; 
     
-    /* THE UNIQUE SHAPE CONFIGURATION */
     /* Top-Left, Top-Right, Bottom-Right, Bottom-Left */
     border-radius: 150px 0 150px 0;
     
-    overflow: hidden; /* Ensures image stays inside the shape */
-    box-shadow: 0 25px 50px rgba(0,0,0,0.4); /* Soft shadow for depth */
+    overflow: hidden; 
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4); 
 }
 
 .about-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fills the shape without distorting */
+    object-fit: cover; 
 }
 
 /* --- Right Column: Content --- */
 .about-content {
-    flex: 1; /* Takes up the other half */
+    flex: 1; 
 }
 
 .about-heading {
     font-size: 36px;
     font-weight: 900;
-    color: #051937; /* Your dark blue brand color */
+    color: #051937; 
     margin-bottom: 25px;
-    position: relative; /* Needed for the underline */
+    position: relative; 
 }
 
 /* The orange underline effect */
@@ -436,7 +403,7 @@ body {
     bottom: -10px;
     width: 120px;
     height: 4px;
-   background: linear-gradient(to right, #051937, #00b4d8); /* A nice orange color */
+    background: linear-gradient(to right, #051937, #00b4d8); 
     border-radius: 2px;
 }
 
@@ -451,36 +418,35 @@ body {
 .btn-orange {
     display: inline-flex;
     padding: 0;
-	justify-Content:center;
-	align-items:center;
-	width: 60px;
-	height: 60px;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
     background: linear-gradient(to right, #051937, #00b4d8);
     color: white;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 30px; /* Fully rounded button */
+    border-radius: 30px; 
     transition: all 0.3s ease;
-	font-size: 28px ;
+    font-size: 28px ;
     box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
 }
 
 .btn-orange:hover {
-   filter: brightness(1..2);
-    transform: translateY(-3px)scale(1.1); /* Subtle lift effect */
+    filter: brightness(1.2);
+    transform: translateY(-3px) scale(1.1); 
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* --- MOBILE RESPONSIVENESS (About) --- */
 @media (max-width: 768px) {
     .about-container {
-        flex-direction: column; /* Stack them on phone */
+        flex-direction: column; 
         gap: 40px;
     }
 
     .about-image-wrapper {
-        width: 100%; /* Full width on phone */
-        height: 350px; /* Slightly shorter */
-        /* Adjust shape for mobile if needed */
+        width: 100%; 
+        height: 350px; 
         border-radius: 100px 0 100px 0; 
     }
     
@@ -493,6 +459,7 @@ body {
         height: 3px;
     }
 }
+
 /* ========================================= */
 /* ENTRY ANIMATIONS */
 /* ========================================= */
@@ -501,42 +468,43 @@ body {
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translate3d(0,60px,0); /* Start 60px lower */
+        transform: translate3d(0,60px,0); 
     }
     100% {
         opacity: 1;
-        transform: translate3d(0,0,0); /* End in natural position */
+        transform: translate3d(0,0,0); 
     }
 }
 
 /* 2. Apply to Carousel (Runs immediately on Page Load) */
 .carousel-section {
-    /* Run the fadeUp animation for 1 second */
-	opacity:0;
+    opacity:0;
     animation: fadeUp 2s ease-out forwards; 
-	transform-origin:center bottom;
+    transform-origin:center bottom;
 }
 
 /* 3. Prepare About Image (Hidden initially, waits for Scroll) */
 .about-image-wrapper,
-.about-content { opacity: 0; 
-				transform: translate3d(0,60px,0);
-				transition: all 1.5s ease-out;
-				transition-delay:0.2s;
-				
+.about-content { 
+    opacity: 0; 
+    transform: translate3d(0,60px,0);
+    transition: all 1.5s ease-out;
+    transition-delay:0.2s;
 }
+
 /* 4. The "Active" Class (Added by JavaScript later) */
 .reveal-visible {
     opacity: 1 !important;
     transform: translate3d(0,0,0) !important;
 }
+
 /* ========================================= */
 /* TEAM/ROLES SECTION STYLES */
 /* ========================================= */
 
 .team-section {
     padding: 80px 5%;
-    background-color: #f9f9f9; /* Slightly different background to separate sections */
+    background-color: #f9f9f9; 
 }
 
 .team-container {
@@ -557,22 +525,22 @@ body {
     display: grid;
     /* Creates 4 equal columns on desktop */
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px; /* Space between cards */
+    gap: 30px; 
 }
 
 .team-card {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center; 
 }
 
 /* --- Shaped Image Container with Gradient --- */
 .team-image-wrapper {
     width: 100%;
-    height: 320px; /* Fixed height for uniformity */
-    position: relative; /* Needed for floating label */
+    height: 320px; 
+    position: relative; 
     margin-bottom: 25px;
-    overflow: hidden; /* Crops image to shape */
+    overflow: hidden; 
     box-shadow: 0 15px 25px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 
@@ -587,80 +555,71 @@ body {
 }
 
 .team-card:hover .team-image-wrapper {
-    transform: translateY(-10px); /* Pop up effect on hover */
+    transform: translateY(-10px); 
 }
 
 .team-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures photo fills the shape */
-    /* Optional: makes image slightly transparent to blend with gradient */
-	opacity: 0.9; 
-	transform: scale(1.7);
-	
+    object-fit: cover; 
+    opacity: 0.9; 
+    transform: scale(1.7);
 }
 
-/* --- The Floating Label (e.g., "Core Committee") --- */
+/* --- The Floating Label --- */
 .floating-label {
     position: absolute;
     top: 40px;
-    left: -10px; /* Hangs off the edge slightly */
-    background-color: #051937; /* Dark blue */
+    left: -10px; 
+    background-color: #051937; 
     color: white;
     padding: 8px 15px;
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     border-radius: 4px;
-    transform: rotate(-5deg); /* Slight tilt */
+    transform: rotate(-5deg); 
     box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
     z-index: 2;
 }
 
 /* --- Card Content Styles --- */
 .team-card-content {
-	width: 100%;
+    width: 100%;
     text-align: left;
     
     /* 1. HIDE IT INITIALLY */
-    max-height: 0;           /* Takes up zero space */
-    opacity: 0;              /* Invisible */
-    overflow: hidden;        /* Hides anything that spills out */
+    max-height: 0;           
+    opacity: 0;              
+    overflow: hidden;        
     
     /* 2. PREPARE ANIMATION */
-    /* Start slightly higher up (behind the photo) */
     transform: translateY(-20px); 
-    
-    /* Smoothly animate all these properties over 0.5 seconds */
     transition: all 0.5s ease;
-    
-    /* Move padding here so it doesn't take up space when hidden */
     padding: 0 10px;
 }
+
 /* --- THE HOVER TRIGGER --- */
-/* When you hover over the CARD, change the CONTENT */
 .team-card:hover .team-card-content {
     /* 1. REVEAL IT */
-    max-height: 300px;       /* Allow it to grow to this size */
-    opacity: 1;              /* Fully visible */
+    max-height: 300px;       
+    opacity: 1;              
     
     /* 2. SLIDE IT DOWN */
-    transform: translateY(0); /* Returns to natural position */
-    
-    /* Optional: Add padding back when visible if needed */
+    transform: translateY(0); 
     padding-top: 15px;
 }
 
 /* --- Optional: Keep the image pop effect --- */
 .team-card:hover .team-image-wrapper {
-    transform: translateY(-10px); /* Keeps your existing image pop */
+    transform: translateY(-10px); 
 }
 
 .team-card-content h3 {
     font-size: 20px;
     font-weight: 900;
-    color: #051937; /* Dark Blue */
-    margin: 0 0 5px 0; /* Tiny space below it */
+    color: #051937; 
+    margin: 0 0 5px 0; 
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -674,19 +633,19 @@ body {
 .member-name {
     font-size: 20px;
     font-weight: 700;
-    color:#696969; /* Brand Light Blue */
-    margin: 0 0 10px 0; /* Space between name and class */
-    text-transform: capitalize; /* "Adhil Mohammed" instead of "ADHIL..." */
-	margin-bottom: 2px;
+    color:#696969; 
+    margin: 0 0 10px 0; 
+    text-transform: capitalize; 
+    margin-bottom: 2px;
 }
 
 /* --- Class (p) - Updated for short text --- */
 .member-class {
     font-size: 14px;
-    color: #666; /* Soft Grey */
-    font-style: italic; /* Makes it look like a detail */
+    color: #666; 
+    font-style: italic; 
     margin-bottom: 15px;
-	margin-top: 0;
+    margin-top: 0;
     line-height: 1.4;
     font-weight: 500;
 }
@@ -696,116 +655,99 @@ body {
     display: inline-block;
     font-size: 13px;
     font-weight: 700;
-    color: #00b4d8; /* Light blue brand color */
+    color: #00b4d8; 
     text-decoration: none;
     text-transform: uppercase;
     transition: all 0.3s ease;
 }
 
 .read-more-btn:hover {
-    color: #051937; /* Dark blue on hover */
-    padding-left: 5px; /* Slight movement effect */
+    color: #051937; 
+    padding-left: 5px; 
 }
 
-
-/* --- MOBILE RESPONSIVENESS --- */
+/* --- MOBILE RESPONSIVENESS (Team) --- */
 @media (max-width: 992px) {
-    /* On tablets, switch to 2 columns */
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    /* On phones, switch to 1 column stack */
-	.team-section { 
-	      padding:40px 20px;
-	}
-	
+    .team-section { 
+        padding:40px 20px;
+    }
+    
     .team-grid {
         grid-template-columns: 1fr;
-        gap: 30px; /* More space between stacked cards */
+        gap: 30px; 
     }
-	.team-card {
-        /* This prevents the card from being HUGE on the phone */
+    .team-card {
         max-width: 280px; 
-        margin: 0 auto; /* Centers the smaller card */
+        margin: 0 auto; 
     }
-	.member-name {
-        font-size: 15px; /* Adjust if needed */
+    .member-name {
+        font-size: 15px; 
     }
-	
     
     .section-title.center-text {
         font-size: 26px;
-		margin-bottom: 40px;
+        margin-bottom: 40px;
     }
 
     .team-image-wrapper {
         height: auto !important;
-        /* Slightly less dramatic shape on mobile */
-		border-radius: 30px 30px 150px 30px;
-		margin-bottom: 15px;
+        border-radius: 30px 30px 150px 30px;
+        margin-bottom: 15px;
     }
-	.team-image {
-        height: auto !important; /* Maintains natural aspect ratio */
-        width: 100%;             /* Fits the width of the phone screen */
-        
-        /* This ensures NO cropping happens */
+    .team-image {
+        height: auto !important; 
+        width: 100%;             
         object-fit: cover; 
-        
-        /* Aligns photo to bottom (good for standing portraits) */
         object-position: top center;
     }
-	.team-card-content {
-        max-height: none !important;  /* Ignore the height limit */
-        opacity: 1 !important;        /* Always visible */
-        transform: none !important;   /* No sliding */
+    .team-card-content {
+        max-height: none !important;  
+        opacity: 1 !important;        
+        transform: none !important;   
         padding-top: 10px !important;
     }
-	.team-card-content h3 {
-        font-size: 18px; /* Smaller Name */
+    .team-card-content h3 {
+        font-size: 18px; 
         margin-bottom: 5px;
     }
     
     .team-card-content p {
-        font-size: 13px; /* Smaller Description */
+        font-size: 13px; 
         line-height: 1.4;
     }
     
     .floating-label {
-        font-size: 10px; /* Smaller blue tag */
+        font-size: 10px; 
         padding: 5px 15px;
         top: 20px;
     }
 }
+
+/* Animation Delays for cards */
 .team-card {
     opacity: 0;
-    transform: translate3d(0, 60px, 0); /* Push down 60px */
-    transition: all 0.8s ease-out;      /* Speed of the rise */
+    transform: translate3d(0, 60px, 0); 
+    transition: all 0.8s ease-out;      
 }
 
-/* 2. Add specific delays for each card */
-/* Card 1: Fast */
 .team-card:nth-child(1) { transition-delay: 0.1s; }
-
-/* Card 2: Slight Delay */
 .team-card:nth-child(2) { transition-delay: 0.3s; }
-
-/* Card 3: More Delay */
 .team-card:nth-child(3) { transition-delay: 0.5s; }
-
-/* Card 4: Longest Delay */
 .team-card:nth-child(4) { transition-delay: 0.7s; }
 
 /*PRINCIPLE MESSAGE SECTION*/
 .message-slider-section {
-    /* Dark background */
     background-color: #0a0e17; 
     padding: 100px 5%;
     color: #ffffff;
-    overflow: hidden; /* Keeps blobs from overflowing */
-	Position: relative;
+    overflow: hidden; 
+    position: relative;
 }
 
 .message-container {
@@ -814,8 +756,8 @@ body {
     gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
-	Position: relative;
-	z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 /* --- Left Column: Image & Blobs --- */
@@ -825,20 +767,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Ensure height for blobs */
     min-height: 500px; 
 }
 
 /* The Person's Photo */
 .person-image {
-    /* Makes the image a clean vertical oval/rectangle */
-	Position: relative;
+    position: relative;
     width: 350px;
     height: 480px;
     object-fit: cover;
     object-position: top center;
     border-radius: 100px;
-    z-index: 5; /* Sits above the blob */
+    z-index: 5; 
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
@@ -847,32 +787,28 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* Centers the blob behind the image */
     transform: translate(-50%, -50%) scale(1.2); 
     width: 400px;
     height: 400px;
     z-index: 2;
-    opacity: 0.2; /* Subtle gradient effect */
-    
-    /* Creates the organic blob shape */
+    opacity: 0.2; 
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-    
-    /* Slow rotation animation */
     animation: blobMover 20s linear infinite;
 }
+
 #shape-blur-canvas {
     position: absolute;
     top: 0;
     left: 0;
-	margin-top: -150px;
-	margin-Left: -150px;
+    margin-top: -150px;
+    margin-left: -150px;
     transform: none;
-    width: 100%;  /* Size of the animation area */
-	max-width:600px;
+    width: 100%;  
+    max-width: 600px;
     height: 600px;
-    z-index: 0;    /* Behind the photo (photo is z-index 2) */
-    pointer-events: none; /* Let clicks pass through to the image */
-    opacity: 0.5;  /* Slight transparency to blend nicely */
+    z-index: 0;    
+    pointer-events: none; 
+    opacity: 0.5;  
 }
 
 @keyframes blobMover {
@@ -913,14 +849,14 @@ body {
 
 /* --- Right Column: Content --- */
 .message-content-col {
-    flex: 1.2; /* Slightly wider than image column */
+    flex: 1.2; 
 }
 
 .section-tag {
     display: block;
     font-size: 14px;
     font-weight: 700;
-    color: #00b4d8; /* Light blue */
+    color: #00b4d8; 
     letter-spacing: 2px;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -942,7 +878,7 @@ body {
 .message-text {
     font-size: 16px;
     line-height: 1.8;
-    color: #a0a0a0; /* Light grey text */
+    color: #a0a0a0; 
     margin-bottom: 40px;
 }
 
@@ -997,18 +933,56 @@ body {
     opacity: 1;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* --- MOBILE RESPONSIVENESS (Messages) --- */
 @media (max-width: 992px) {
     .message-container {
         flex-direction: column;
         text-align: center;
+        gap: 30px;
+        width: 100%;
     }
-    .message-image-col { min-height: 400px; margin-bottom: 40px; }
-    .person-image { width: 280px; height: 380px; }
-    .blob-bg { width: 320px; height: 320px; }
-    .message-heading { font-size: 32px; }
-    .button-group { justify-content: center; }
+
+    .message-image-col { 
+        min-height: 350px; 
+        margin-bottom: 20px; 
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Forces horizontal centering */
+        align-items: center;
+        position: relative;
+    }
+
+    /* FIX: Force Person Image to stay centered and clear */
+    .person-image { 
+        width: 280px; 
+        height: 380px; 
+        max-width: 80%;
+        margin: 0 auto; /* Centers the image block */
+        
+        /* SAFETY OVERRIDE: Forces image to be sharp and bright */
+        opacity: 1 !important;
+        filter: blur(0) !important;
+        transform: scale(1) !important;
+    }
+
+    /* FIX: Ensure blob doesn't push width open */
+    .blob-bg { 
+        width: 300px; 
+        height: 300px; 
+        max-width: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1); /* Centers the blob behind image */
+    }
+
+    .message-heading { 
+        font-size: 32px; 
+    }
+    
+    .button-group { 
+        justify-content: center; 
+    }
 }
+
 /* ========================================= */
 /* FOOTER STYLES */
 /* ========================================= */
@@ -1159,6 +1133,4 @@ body {
     }
     
     .footer-desc { max-width: 100%; }
-
 }
-
