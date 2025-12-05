@@ -77,6 +77,19 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin: 0 10px; 
 }
+/* Styling the clickable phone numbers */
+.phone-link {
+    color: white;           /* Keeps text white */
+    text-decoration: none;  /* Removes the underline */
+    font-weight: inherit;   /* Keeps formatting consistent */
+    transition: opacity 0.3s ease;
+}
+
+/* Optional: Slight fade when hovering/touching */
+.phone-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
 
 .info-item {
     display: flex;
@@ -1134,3 +1147,4 @@ body {
     
     .footer-desc { max-width: 100%; }
 }
+
